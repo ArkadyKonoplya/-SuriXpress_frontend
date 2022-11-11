@@ -1,0 +1,169 @@
+<section id="main-banner-page" class="position-relative page-header sign-up-header parallax section-nav-smooth">
+    <div class="overlay overlay-dark opacity-7 z-index-1"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="page-titles whitecolor text-center padding_top padding_bottom">
+                    <h2 class="font-bold">Create The</h2>
+                    <h3 class="font-light py-2">Account To Unlock</h3>
+                </div>
+            </div>
+        </div>
+        <div class="gradient-bg title-wrap mt-n5">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 whitecolor">
+                    <h3 class="float-left">SuriXpress Web</h3>
+                    <ul class="breadcrumb top10 bottom10 float-right">
+                        <li class="breadcrumb-item hover-light"><a href="../index-logistic.html">Home</a></li>
+                        <li class="breadcrumb-item hover-light">Signup</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Page Header ends -->
+
+<!-- Main sign-up section starts -->
+<section id="ourfaq" class="bgprimary position-relative padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class="heading bottom40 greencolor font-light2"><span class="font-normal">Registreer</span> 
+                    <span class="divider-center"></span>
+                </h2>
+                <div *ngIf="showError" class="alert alert-danger" role="alert">
+                    <span [innerHTML]="errorMessage"></span>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 offset-md-3 pr-lg-0 whitebox noshadow">
+                <div class="widget logincontainer">
+                    <h3 class="greencolor bottom35 text-center text-md-center">Create Your account </h3>
+                    <form [formGroup]="registerForm" autocomplete="off" novalidate (ngSubmit)="registerUser(registerForm.value)">
+                        <div class="row">
+                        
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group bottom35">
+                                    <label for="firstName" class="d-none"></label>
+                                    <input type="text" id="firstName" formControlName="firstName" placeholder="Voornaam:" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group bottom35">
+                                    <label for="lastName" class="d-none"></label>
+                                    <input type="text" id="lastName" formControlName="lastName" placeholder="Achternaam:" class="form-control" >
+                                </div>
+                            </div> 
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group bottom35">
+                                    <label for="registerEmail" class="d-none"></label>
+                                    <input type="email" id="email" formControlName="email" placeholder="Email:" class="form-control" />
+                                    <span class="invalidFeedback">
+                                             <em *ngIf="validateControl('email') && hasError('email', 'email')">Please provide a valid email</em>
+                                             <em *ngIf="validateControl('email') && hasError('email', 'required')">Email is required</em>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group bottom35">
+                                    <label for="password" class="d-none"></label>
+                                    <input type="password" id="password" formControlName="password" placeholder="Wachtwoord:" class="form-control" />
+                                    <span class="invalidFeedback">
+                                        <em *ngIf="validateControl('password') && hasError('password', 'required')">Password is required</em>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group bottom35">
+                                    <label for="confirm" class="d-none"></label>
+                                    <input type="password" id="confirm" formControlName="confirm" placeholder="Herhaal wachtwoord:" class="form-control" />
+                                    <span class="invalidFeedback">
+                                         <em *ngIf="validateControl('confirm') && hasError('confirm', 'required')">Confirmation is required</em>
+                                        <em *ngIf="hasError('confirm', 'mustMatch')">Passwords must match</em>
+                                    </span>
+                                </div>
+                            </div>
+                           <!--  <div class="col-md-12 col-sm-12">
+                                <div class="form-group bottom35">
+                                    <div class="form-check text-left">
+                                        <input class="form-check-input" checked type="checkbox" value="" id="rememberMe">
+                                        <label class="form-check-label" for="rememberMe">
+                                            Remember me on this device
+                                        </label>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="col-sm-12">
+                                <button type="submit" class="button gradient-btn w-100" [disabled]="!registerForm.valid">Account aanmaken</button>
+                                <p class="top20 log-meta"> Already have an account? &nbsp;<a href="login" class="greencolor">Sign In</a> </p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- <div class="col-lg-6 d-none d-lg-block pl-lg-0">
+                <div class=" image login-image h-100">
+                    <img src="images/register-section.jpg" alt="">
+                </div> -->
+            </div>
+        </div>
+</section>
+
+
+<!-- <div class="card">
+    <div class="card-body">
+        <h1 class="card-title">Register</h1>
+        <div *ngIf="showError" class="alert alert-danger" role="alert">
+            <span [innerHTML]="errorMessage"></span>
+        </div>
+        <form [formGroup]="registerForm" autocomplete="off" novalidate (ngSubmit)="registerUser(registerForm.value)">
+            <div class="mb-3 row">
+                <label for="firstName" class="col-form-label col-sm-2">First Name:</label>
+                <div class="col-md-5">
+                    <input type="text" id="firstName" formControlName="firstName" class="form-control" />
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="lastName" class="col-form-label col-sm-2">Last Name:</label>
+                <div class="col-md-5">
+                    <input type="text" id="lastName" formControlName="lastName" class="form-control" />
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="email" class="col-form-label col-sm-2">Email:</label>
+                <div class="col-md-5">
+                    <input type="email" id="email" formControlName="email" class="form-control" />
+                </div>
+                <div class="col-md-5">
+                    <em *ngIf="validateControl('email') && hasError('email', 'email')">Please provide a valid email</em>
+                    <em *ngIf="validateControl('email') && hasError('email', 'required')">Email is required</em>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="password" class="col-form-label col-sm-2">Password:</label>
+                <div class="col-md-5">
+                    <input type="password" id="password" formControlName="password" class="form-control" />
+                </div>
+                <div class="col-md-5">
+                    <em *ngIf="validateControl('password') && hasError('password', 'required')">Password is required</em>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="confirm" class="col-form-label col-sm-2">Confirm Password:</label>
+                <div class="col-md-5">
+                    <input type="password" id="confirm" formControlName="confirm" class="form-control" />
+                </div>
+                <div class="col-md-5">
+                    <em *ngIf="validateControl('confirm') && hasError('confirm', 'required')">Confirmation is required</em>
+                    <em *ngIf="hasError('confirm', 'mustMatch')">Passwords must match</em>
+                </div>
+            </div>
+            <br>
+            <div class="mb-3 row">
+                <div class="col-md-1">          
+                    <button type="submit" class="btn btn-info" [disabled]="!registerForm.valid">Register</button>
+                </div>
+            </div>
+        </form>
+    </div>
+  </div> -->

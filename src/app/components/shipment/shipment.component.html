@@ -1,0 +1,289 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+    <div class="card ">
+      <div class="card-header card-header-rose card-header-text">
+        <div class="card-text">
+          <h4 class="card-title">Form Elements</h4>
+        </div>
+      </div>
+      <form method="get" action="/" class="form-horizontal">
+
+        <div class="card-body">
+            <mat-card-title>Verzend Details</mat-card-title>
+            <div class="row">
+                <label class="col-md-2 col-form-label">Verzend Opties</label>
+                    <div class="checkbox-radios">
+                        <mat-radio-button value="1">Luchtvracht</mat-radio-button>
+                        <br>
+                        <mat-radio-button value="2">Zeevracht</mat-radio-button>
+                    </div>
+                <label class="col-md-2 col-form-label">Ophalen/Bezorgen</label>
+                    <div class="checkbox-radios">
+                        <mat-checkbox>Zending Ophalen</mat-checkbox>
+                        <br>
+                        <mat-checkbox>Zending Bezorgen</mat-checkbox>
+                        <i class="material-icons" matTooltip="Aan bezorgen zijn kosten verbonden">&ensp;info</i> 
+                    </div>
+                <label class="col-md-2 col-form-label">Kies Ophaal Datum en Tijd</label>
+                    <div class="col-md-2 mr-auto">
+                        <mat-form-field >
+                          <input matInput [matDatepicker]="picker" type="datetime-local" placeholder="Kies Datum" (click)="picker.open()">
+                          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                          <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+            </div>
+            </div>
+        <mat-divider></mat-divider>
+        <div class="card-body">
+        <mat-card-title>Afzender</mat-card-title>
+          <div class="row">
+            <label class="col-md-2 col-form-label">Voornaam</label>
+                <div class="col-md-3">
+                    <mat-form-field class="example-full-width">
+                      <input matInput type="text" placeholder="Voornaam">
+                    </mat-form-field>
+                </div> 
+        </div>
+        <div class="row">
+            <label class="col-md-2 col-form-label">Achternaam</label>
+            <div class="col-md-3">
+                <mat-form-field class="example-full-width">
+                  <input matInput type="text" placeholder="Achternaam">
+                </mat-form-field>
+            </div>
+        </div>
+          <div class="row">
+            <label class="col-md-2 col-form-label">Straat & Huisnummer</label>
+            <div class="col-md-3 col-2">
+              <mat-form-field class="example-full-width">
+                <input matInput type="text">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <label class="col-md-0 col-2 col-form-label">Postcode</label>
+            <div class="col-md-3">
+              <mat-form-field class="example-full-width">
+                <input matInput type="text">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <label class="col-sm-2 col-form-label">Woonplaats</label>
+            <div class="col-md-2">
+              <mat-form-field class="example-full-width">
+                <input matInput type="text" placeholder="Woonplaats">
+              </mat-form-field>
+            </div>
+            <label class="col-sm-0 col-form-label">Land</label>
+            <div class="col-md-3">
+              <mat-form-field class="example-full-width">
+                <input matInput type="text" placeholder="placeholder">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <label class="col-sm-2 col-form-label">Email</label>
+            <div class="col-md-2">
+              <mat-form-field class="example-full-width">
+                <input matInput type="text" placeholder="placeholder">
+              </mat-form-field>
+            </div>
+            <label class="col-sm-0  col-form-label">Telefoon</label>
+            <div class="col-md-2">
+              <mat-form-field class="example-full-width">
+                <input matInput type="text" placeholder="placeholder">
+              </mat-form-field>
+            </div>
+          </div>
+        <!--   <div class="row">
+            <label class="col-sm-2 col-form-label">Static control</label>
+            <div class="col-sm-10">
+              <div class="form-group">
+                <p class="form-control-static">hello@creative-tim.com</p>
+              </div>
+            </div>
+          </div> -->
+    <!--       <div class="row">
+            <label class="col-sm-2 col-form-label">Checkboxes and radios</label>
+            <div class="col-sm-10 checkbox-radios">
+              <mat-checkbox> First Checkbox</mat-checkbox>
+              <br>
+              <mat-checkbox>Second Checkbox</mat-checkbox>
+              <br>
+              <mat-radio-button value="1">First Radio</mat-radio-button>
+              <br>
+              <mat-radio-button value="2">Second Radio</mat-radio-button>
+
+            </div>
+          </div> -->
+          <div class="row">
+            <label class="col-sm-2 col-form-label">Notificatie</label>
+            <div class="col-md-2">
+              <mat-checkbox class="example-margin mb-0"> SMS</mat-checkbox>
+              <mat-checkbox class="example-margin mb-0"> Email</mat-checkbox>
+              <mat-checkbox class="example-margin mb-0"> Whatsapp</mat-checkbox>
+            </div>
+          </div>
+        
+      </div>
+      <mat-divider></mat-divider>
+      <div class="card-body">
+        <mat-card-title>Ontvanger</mat-card-title>
+
+        <div class="row">
+            <label class="col-md-2 col-form-label"></label>
+            <div class="col-md-3">
+                <div class="dropdown">
+                    <button mat-raised-button href="#pablo" class="dropdown-toggle btn btn-primary btn-round btn-block" data-toggle="dropdown">Kies ontvanger uit adresboek
+                        <b class="caret"></b>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-left">
+                        <li class="dropdown-header">Contactpersonen</li>
+                        <li>
+                            <a href="#pablo">Auma</a>
+                        </li>
+                        <li>
+                            <a href="#pablo">Aboikoni</a>
+                        </li>
+                        <li>
+                            <a href="#pablo">Santa Boma</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#pablo">Akanswari</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#pablo">Awara</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row">
+            <label class="col-md-2 col-form-label">Voornaam</label>
+                <div class="col-md-3">
+                    <mat-form-field class="example-full-width">
+                      <input matInput type="text" placeholder="Voornaam">
+                    </mat-form-field>
+                </div> 
+        </div>
+        <div class="row">
+            <label class="col-md-2 col-form-label">Achternaam</label>
+            <div class="col-md-3">
+                <mat-form-field class="example-full-width">
+                  <input matInput type="text" placeholder="Achternaam">
+                </mat-form-field>
+            </div>
+        </div>
+          <div class="row">
+            <label class="col-md-2 col-form-label">Straat</label>
+            <div class="col-md-3 col-2">
+              <mat-form-field class="example-full-width">
+                <input matInput type="text">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <label class="col-md-2 col-2 col-form-label">Ressort</label>
+            <div class="col-md-3">
+              <mat-form-field class="example-full-width">
+                <input matInput type="text">
+              </mat-form-field>
+            </div>
+            <i class="material-icons">info</i>
+            </div>
+            <div class="row">
+            <label class="col-sm-2 col-form-label">District</label>
+            <div class="col-md-3">
+              <mat-form-field class="example-full-width">
+                <mat-select name="city">
+                  <mat-option *ngFor="let city of cities" [value]="city.value">
+                    {{ city.viewValue }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <i class="material-icons">info</i>
+          </div>
+          <div class="row">
+            <label class="col-sm-2 col-form-label">Land</label>
+            <div class="col-md-2">
+              <mat-form-field class="example-full-width">
+                <input matInput type="text" placeholder="placeholder">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <label class="col-sm-2 col-form-label">Email</label>
+            <div class="col-md-2">
+              <mat-form-field class="example-full-width">
+                <input matInput type="text" placeholder="placeholder">
+              </mat-form-field>
+            </div>
+            <label class="col-sm-0  col-form-label">Telefoon</label>
+            <div class="col-md-2">
+              <mat-form-field class="example-full-width">
+                <input matInput type="text" placeholder="placeholder">
+              </mat-form-field>
+            </div>
+          </div>
+        <!--   <div class="row">
+            <label class="col-sm-2 col-form-label">Static control</label>
+            <div class="col-sm-10">
+              <div class="form-group">
+                <p class="form-control-static">hello@creative-tim.com</p>
+              </div>
+            </div>
+          </div> -->
+    <!--       <div class="row">
+            <label class="col-sm-2 col-form-label">Checkboxes and radios</label>
+            <div class="col-sm-10 checkbox-radios">
+              <mat-checkbox> First Checkbox</mat-checkbox>
+              <br>
+              <mat-checkbox>Second Checkbox</mat-checkbox>
+              <br>
+              <mat-radio-button value="1">First Radio</mat-radio-button>
+              <br>
+              <mat-radio-button value="2">Second Radio</mat-radio-button>
+
+            </div>
+          </div> -->
+          <div class="row">
+            <label class="col-sm-2 col-form-label">Notificatie</label>
+            <div class="col-md-2">
+              <mat-checkbox class="example-margin mb-0"> SMS</mat-checkbox>
+              <mat-checkbox class="example-margin mb-0"> Email</mat-checkbox>
+              <mat-checkbox class="example-margin mb-0"> Whatsapp</mat-checkbox>
+            </div>
+          </div>
+      </div>
+      <mat-divider></mat-divider>
+   
+      <div class="card-body">
+        <mat-card-title>Pakket Info</mat-card-title>
+      </div>
+      
+
+      <div class="card-footer">
+
+        <div class="checkbox-radios">
+            <mat-checkbox>Ik verklaar het formulier naar waarheid te hebben ingevuld</mat-checkbox>
+            <br>
+            <mat-checkbox>Ik ga akkoord met de Algemene Voorwaarden</mat-checkbox>
+          </div>
+        <button mat-raised-button type="submit" class="btn btn-rose" >Register</button>
+      </div>
+    </form>
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
